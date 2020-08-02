@@ -16,29 +16,30 @@ public class ICPCTeam {
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.next();
 		}
-		acmteam(arr);
+		acmteam(arr, m);
+		sc.close();
 	}
 
-	private static void acmteam(String[] arr) {
+	private static void acmteam(String[] arr, int m) {
 		int count = 0;
 		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < arr.length; i++) {
-			for(int j = i+ 1;j<arr.length;j++) {
-				count  =0;
-				for(int k =0;k<arr[i].length();k++) {
-					if(arr[i].charAt(k) == '0' && arr[j].charAt(k) == '0') {
+			for (int j = i + 1; j < arr.length; j++) {
+				count = 0;
+				for (int k = 0; k < arr[i].length(); k++) {
+					if (arr[i].charAt(k) == '0' && arr[j].charAt(k) == '0') {
 						continue;
 					}
 					count++;
 				}
 				list.add(count);
 			}
-			
+
 		}
 		List<Integer> sort = list.stream().sorted().collect(Collectors.toList());
-        int max = sort.get(sort.size() - 1);
-        int ans = (int) sort.stream().filter(i -> i == max).count();
-        System.out.println(max + " " + ans);
+		int max = sort.get(sort.size() - 1);
+		int ans = (int) sort.stream().filter(i -> i == max).count();
+		System.out.println(max + " " + ans);
 
 	}
 

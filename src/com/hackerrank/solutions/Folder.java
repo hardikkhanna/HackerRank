@@ -1,7 +1,6 @@
 package com.hackerrank.solutions;
 
 import java.io.File;
-import java.util.Scanner;
 
 public class Folder {
 	public static void main(String args[]) {
@@ -22,6 +21,7 @@ public class Folder {
 		
 	}
 
+	@SuppressWarnings("unused")
 	private static void checkAndCreateFolder(String path) {
 		path = "str\\mm\\";
 		String parentFolder = "";
