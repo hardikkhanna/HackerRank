@@ -2,10 +2,10 @@ package com.hackerrank.solutions;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class HappyLadybugs {
 
+	@SuppressWarnings("unused")
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
@@ -18,11 +18,11 @@ public class HappyLadybugs {
 	}
 
 	private static void happyLadybugs(String input) {
-		if ( !input.contains("_")) {
+		if (!input.contains("_")) {
 			System.out.println("NO");
 			return;
 		}
-		if(input.length() == 1) {
+		if (input.length() == 1) {
 			System.out.println("YES");
 			return;
 		}

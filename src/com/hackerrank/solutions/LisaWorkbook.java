@@ -39,6 +39,6 @@ public class LisaWorkbook {
 		}
 
 		System.out.println(result);
-
+		scanner.close();
 	}
 }
