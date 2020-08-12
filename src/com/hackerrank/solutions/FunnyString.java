@@ -25,7 +25,6 @@ public class FunnyString {
 		}
 		st = st.reverse();
 		str = st.toString();
-		int j = 0;
 		List<Integer> list2 = new ArrayList<Integer>();
 		for (int i = 0; i < str.length() - 1; i++) {
 			list2.add((int) Math.abs(str.charAt(i) - str.charAt(i + 1)));
