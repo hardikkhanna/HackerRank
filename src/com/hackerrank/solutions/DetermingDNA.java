@@ -31,6 +31,7 @@ public class DetermingDNA {
 		sc.close();
 	}
 
+	@SuppressWarnings({ "unused", "unlikely-arg-type" })
 	private static List<Integer> determiningDNA(int first, int last, String str, List<String> list, int[] health,
 			int min, int max) {
 		int count = 0;
