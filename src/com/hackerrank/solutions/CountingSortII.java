@@ -2,7 +2,7 @@ package com.hackerrank.solutions;
 
 import java.util.Scanner;
 
-public class CountingSortI {
+public class CountingSortII {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -17,13 +17,16 @@ public class CountingSortI {
 
 	private static void countingSortI(long[] arr) {
 
-		
 		int[] countArray = new int[100];
 		for (int i = 0; i < arr.length; i++) {
 			countArray[(int) arr[i]] = countArray[(int) arr[i]] + 1;
 		}
 		for (int i = 0; i < countArray.length; i++) {
-			System.out.print(countArray[i] + " ");
+			if(countArray[i] != 0) {
+				while(countArray[i]-->0) {
+					System.out.print(i + " ");
+				}
+			}
 		}
 
 	}
