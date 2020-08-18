@@ -1,6 +1,5 @@
 package com.hackerrank.solutions;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class LonelyInteger {
