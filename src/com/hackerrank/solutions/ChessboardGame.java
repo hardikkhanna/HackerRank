@@ -3,14 +3,15 @@ package com.hackerrank.solutions;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class GameOfStones {
+public class ChessboardGame {
+	static String chessboardGame(int x, int y) {
 
-	// Complete the gameOfStones function below.
-	static String gameOfStones(int n) {
-
-		return (n % 7 == 0 || n % 7 == 1) ? "Second" : "First";
-
-	} 
+		x = x % 4;
+		y = y % 4;
+		if ((y == 0) || (y == 3) || (x == 0) || (x == 3))
+			return "First";
+		return "Second";
+	}
 
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -20,11 +21,13 @@ public class GameOfStones {
 		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
 		for (int tItr = 0; tItr < t; tItr++) {
-			int n = scanner.nextInt();
-			scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+			String[] xy = scanner.nextLine().split(" ");
 
-			String result = gameOfStones(n);
+			int x = Integer.parseInt(xy[0]);
 
+			int y = Integer.parseInt(xy[1]);
+
+			String result = chessboardGame(x, y);
 			System.out.println(result);
 		}
 
