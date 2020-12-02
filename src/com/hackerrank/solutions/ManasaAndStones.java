@@ -1,7 +1,8 @@
 package com.hackerrank.solutions;
 
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ManasaAndStones {
 
@@ -12,7 +13,7 @@ public class ManasaAndStones {
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		while (t-- > 0) {
-			int[] ans = manasaAndStones(n, a, b);
+			Integer[] ans = manasaAndStones(n, a, b);
 			for (int i = 0; i < ans.length; i++) {
 				System.out.print(ans[i] + "");
 			}
@@ -21,14 +22,15 @@ public class ManasaAndStones {
 
 	}
 
-	private static int[] manasaAndStones(int n, int a, int b) {
+	private static Integer[] manasaAndStones(int n, int a, int b) {
 
-		int[] arrStones = new int[n];
+		Set<Integer> set = new HashSet<Integer>();
+		Integer[] arrStones = new Integer[n];
 		for (int i = 0; i < n; i++) {
 			int temp = a * ((n - 1) - i) + b * i;
-			arrStones[i] = temp;
+			set.add(temp);
 		}
-		Arrays.sort(arrStones);
+		arrStones = set.stream().sorted().toArray(Integer[]::new);
 		return arrStones;
 
 	}
